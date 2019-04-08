@@ -19,22 +19,21 @@
 	</div>
 		
 
-		<script type="text/javascript">
-
-
-
-		function button_pressed(){
+<script type="text/javascript">
+	
+	// function for the dice and question generation
+	function button_pressed(){
             
-            //Variable holding the audio path
-			var audio = new Audio('Confirm.wav');
+            // variable holding the audio path
+	    var audio = new Audio('Confirm.wav');
             
-            //Variable holding the random dice number
-			var rand_number = Math.floor(Math.random()*6);
+            // variable holding the random dice number
+	    var rand_number = Math.floor(Math.random()*6);
             
-            //Variable holding the random question selector
-			var rand_question = Math.floor(Math.random()*20);
+            // variable holding the random question selector
+	    var rand_question = Math.floor(Math.random()*20);
             
-            //Questions array			
+            // questions array			
 			var questions = 
 			[
 			"Nævn en ting, som din holdkammerat har gjort for dig i denne uge, som har gjort dig glad.", 
@@ -60,13 +59,16 @@
 		    "Tommelfingerkrig med din makker!"
 			]
 			
-			
+			// hold a question in a varible
 			var question_asked = questions[rand_question];
-
+			
+			// push the question variable to the HTML 
 			document.getElementById('question_field').innerHTML = question_asked;
-
-
+			
+			// show the dice-image corresponding to the random number generated
 			document.getElementById('dice_wrapper').style.backgroundImage = "url('" + rand_number + ".png')";
+			
+			// play audio to confirm that a dice roll has taken place
 			audio.play();
 			}
 		</script>
